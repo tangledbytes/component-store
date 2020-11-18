@@ -1,12 +1,15 @@
 version: '3.7'
 
 services:
-  server:
-    image: server
-    build:
-      context: server
-      dockerfile: ./Dockerfile
-    environment:
-      NODE_ENV: production
-    ports:
-      - 8080:8080
+  component-store:
+    image: "${IMAGE_NAME}"
+    networks:
+        - backend
+    deploy:
+      replicas: 1
+    labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.component-store.rule=Host(`component-store.sagacious.dev`)"
+        - "traefik.http.routers.component-store.entrypoints=websecure"
+        - "traefik.http.routers.component-store.tls.certresolver=myresolver"
+        - "traefik.http.services.component-store-service.loadbalancer.server.port=8080"
