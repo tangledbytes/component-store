@@ -13,5 +13,5 @@ RUN npm install --production --silent
 COPY ./server ./
 EXPOSE 8080
 RUN mkdir -p public
-COPY --from=builder /usr/src/app/dist/main.js ./
+COPY --from=builder /usr/src/app/dist/main.js ./public
 CMD [ "npm", "start" ]
