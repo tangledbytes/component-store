@@ -7,12 +7,12 @@
 const webpack = require("webpack");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
-const remoteComponentConfig = require("./remote-component.config").resolve;
+// const remoteComponentConfig = require("./remote-component.config").resolve;
 
-const externals = Object.keys(remoteComponentConfig).reduce(
-  (obj, key) => ({ ...obj, [key]: key }),
-  {}
-);
+// const externals = Object.keys(remoteComponentConfig).reduce(
+//   (obj, key) => ({ ...obj, [key]: key }),
+//   {}
+// );
 
 module.exports = {
   plugins: [
@@ -32,10 +32,11 @@ module.exports = {
   output: {
     libraryTarget: "commonjs"
   },
-  externals: {
-    ...externals,
-    "remote-component.config.js": "remote-component.config.js"
-  },
+  externals: [
+    "react",
+    /^@material-ui\/(core|icons|lab)[/a-zA-Z]*/,
+    "notistack"
+  ],
   module: {
     rules: [
       {

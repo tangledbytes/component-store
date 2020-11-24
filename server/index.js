@@ -11,12 +11,6 @@ app.use((req, _, next) => {
 // CORS
 app.use(cors());
 
-// Fake authorization
-app.use((req, res, next) => {
-    if (req.get('x-auth-token') !== "welcome123") res.sendStatus(403);
-    next();
-})
-
 // Serve static assets
 app.use(express.static("public"));
 

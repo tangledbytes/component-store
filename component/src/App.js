@@ -1,22 +1,18 @@
-import propTypes from "prop-types";
 import React from "react";
-import { Title } from "./components/Title";
-import { Editor } from "react-draft-wysiwyg";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import MesheryVisualizeComponent from "./components/visualize/MesheryVisualizeComponent";
 
-export const App = ({ name }) => {
+export const App = ({
+  GrafanaCustomCharts,
+  updateLoadTestData,
+  MesheryPerformanceComponent,
+  grafana
+}) => {
   return (
-    <div>
-      <Title>Hello {name}!</Title>
-      <Editor />
-    </div>
+    <MesheryVisualizeComponent
+      GrafanaCustomCharts={GrafanaCustomCharts}
+      updateLoadTestData={updateLoadTestData}
+      MesheryPerformanceComponent={MesheryPerformanceComponent}
+      grafana={grafana}
+    />
   );
-};
-
-App.propTypes = {
-  name: propTypes.string
-};
-
-App.defaultProps = {
-  name: "World"
 };

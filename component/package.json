@@ -19,10 +19,24 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.1",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@patternfly/react-icons": "^4.7.18",
+    "clsx": "^1.1.1",
+    "cytoscape": "^3.17.0",
+    "cytoscape-cxtmenu": "^3.3.0",
+    "cytoscape-dagre": "^2.3.1",
+    "cytoscape-popper": "^1.0.7",
     "draft-js": "^0.11.7",
+    "notistack": "^1.0.1",
     "react": "^16.13.1",
+    "react-cytoscapejs": "^1.2.1",
     "react-draft-wysiwyg": "^1.14.5",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "xterm": "^4.9.0",
+    "xterm-addon-fit": "^0.4.0",
+    "xterm-addon-search": "^0.7.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
