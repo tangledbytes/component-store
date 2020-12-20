@@ -1,13 +1,10 @@
 {
-  "name": "@paciolan/remote-component-starter",
-  "version": "1.0.0-semantic-versioning",
-  "description": "Remote Component Starter",
-  "private": true,
+  "name": "component-store",
+  "version": "0.0.1",
+  "description": "A psuedo component store for remote react components",
   "browser": "dist/main.js",
-  "author": "Paciolan",
-  "license": "MIT",
   "scripts": {
-    "build": "node scripts/build.js ./dist/main.js ../server/public",
+    "build": "node scripts/build.js",
     "build:dev": "npm run clean && cross-env NODE_ENV=development webpack --mode development",
     "webpack-dev-server": "cross-env NODE_ENV=development webpack-dev-server -d --port 9090 --config webpack-dev-server.config.js --open",
     "start": "concurrently -n webpack,webpack-dev-server -c green,cyan \"npm run build:dev -- --watch --verbose\" \"npm run webpack-dev-server\"",
@@ -84,8 +81,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "npm run lint && npm run build && npm run test:changed",
-      "pre-push": "npm run test:coverage"
+      "pre-commit": "npm run lint"
     }
   },
   "config": {

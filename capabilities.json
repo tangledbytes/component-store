@@ -1,0 +1,59 @@
+{
+  "provider-type": "remote",
+  "package-version": "v0.1.0",
+  "package-url": "https://component-store.sagacious.dev/provider.tar.gz",
+  "provider-name": "Meshery",
+  "provider-description": [
+    "persistent sessions",
+    "save environment setup",
+    "retrieve performance test results",
+    "free use"
+  ],
+  "extensions": {
+    "navigator": [
+      {
+        "title": "MeshMap",
+        "href": {
+          "uri": "/meshmap",
+          "external": false
+        },
+        "component": "navigator/meshmap/index.js", 
+        "icon": "navigator/img/meshmap-icon.svg",
+        "link:": true,
+        "show": true,
+        "children": [
+            {
+              "title": "View: Single Mesh",
+              "href": {
+                "uri": "/meshmap/mesh/all",
+                "external": false
+              },
+              "component": "navigator/meshmap/index.js", 
+              "icon": "navigator/img/singlemesh-icon.svg",
+              "link": false,
+              "show": true
+            },
+            {
+              "title": "View: Multi Mesh",
+              "href": {
+                "uri": "https://layer5.io/meshmap/mesh/multi",
+                "external": true
+              },
+              "icon": "navigator/img/multimesh-icon.svg",
+              "link:": false,
+              "show": true
+            }
+          ]
+      }
+    ],
+    "userprefs": [
+      {
+        "component": "userprefs/meshmap-preferences.js"
+      }
+    ]
+  },
+  "capabilities": [
+    { "perf-test-history": "true", "endpoint": "/performance/results" },
+    { "smi-conformance-history": "true", "endpoint": "/conformance/results" }
+  ]
+}

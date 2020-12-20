@@ -1,5 +1,5 @@
 export default {
-  "logs": [
+  logs: [
     "I1027 03:15:44.473392       1 storage_rbac.go:195] created clusterrole.rbac.authorization.k8s.io/cluster-admin",
     "I1027 03:15:44.481292       1 storage_rbac.go:195] created clusterrole.rbac.authorization.k8s.io/system:discovery",
     "I1027 03:15:44.488739       1 storage_rbac.go:195] created clusterrole.rbac.authorization.k8s.io/system:basic-user",
@@ -20,4 +20,4 @@ export default {
     "I1027 03:15:44.595717       1 storage_rbac.go:195] created clusterrole.rbac.authorization.k8s.io/system:kube-aggregator",
     "I1027 03:15:44.602849       1 storage_rbac.go:195] created clusterrole.rbac.authorization.k8s.io/system:kube-controller-manager"
   ]
-}
+};
